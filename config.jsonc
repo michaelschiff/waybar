@@ -1,0 +1,43 @@
+{
+    "layer": "top",
+    "position": "top",
+    "autohide": false,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "network",
+        "battery"
+    ],
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": "_",
+            "active": "!!"
+        },
+        "persistent-workspaces": {
+            "*": 2
+        },
+        "disable-scroll": true,
+        "all-outputs": true,
+        "show-special": true
+    },
+    "clock": {
+        "tooltip-format": "{calendar}",
+        "calendar": {
+            "mode": "month"
+        }
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-ethernet": "{ifname}",
+        "format-disconnected": "...",
+        "tooltip-format": "{ifname} via {gwaddr}"
+    }
+}
