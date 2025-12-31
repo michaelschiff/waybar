@@ -6,23 +6,32 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "modules-center": [
-        "clock"
+        "clock",
     ],
     "modules-right": [
+        "cpu",
+        "pulseaudio",
+        "pulseaudio/slider",
+        "bluetooth",
         "network",
         "battery"
     ],
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "custom/separator",
+        "wlr/taskbar",
     ],
+    "wlr/taskbar": {
+        "on-click": "activate",
+    },
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "default": "_",
-            "active": "!!"
+            "default": "\uf070",
+            "active": "\uf06e"
         },
         "persistent-workspaces": {
-            "*": 2
+            "*": 4
         },
         "disable-scroll": true,
         "all-outputs": true,
@@ -35,9 +44,53 @@
         }
     },
     "network": {
-        "format": "{ifname}",
+        "format": "\uf1eb",
         "format-ethernet": "{ifname}",
         "format-disconnected": "...",
         "tooltip-format": "{ifname} via {gwaddr}"
-    }
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": " {volume}%",
+        "format-muted": "󰖁 {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    "bluetooth": {
+      "format-on": "",
+      "format-off": "󰂯",
+      "format-disabled": "󰂲",
+      "format-connected": "󰂴",
+      "format-connected-battery": "{device_battery_percentage}% 󰂴",
+      "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+      "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+      "on-click": "rofi-bluetooth",
+     },
+     "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": [
+          "\uf244",
+          "\uf243",
+          "\uf242",
+          "\uf241",
+          "\uf240",
+        ],
+     },
+     "custom/separator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
+    },
 }

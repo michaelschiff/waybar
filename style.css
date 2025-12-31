@@ -1,145 +1,99 @@
 /* -- Global rules -- */
 * {
-  border: none;
-  font-family: "JetbrainsMono Nerd Font";
-  font-size: 15px;
+  background: #6B6B6B;
+  color: #FFFFFF;
+  font-family: "DejaVu Sans Mono";
+  font-size: 14px;
   min-height: 10px;
-  border-radius: 15px;
-  padding: 0px 5px;
+  border-radius: 3px;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-left: 1px;
+  margin-right: 1px;
 }
 
 window#waybar {
-  background: rgba(34, 36, 54, 0.6);
+  background: rgb(34, 36, 54);
 }
 
 window#waybar.hidden {
   opacity: 0.2;
 }
 
-/* - Genera rules for visible modules -- */
-#custom-archicon,
-#clock,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#idle_inhibitor,
-#pulseaudio,
-#pulseaudio-slider,
-#network,
-#language {
-  color: #161320;
-  transition: none;
-}
-
-#custom-archicon,
-#cpu,
-#idle_inhibitor,
-#clock,
-#temperature,
-#language
-
-#clock {
-  background: #ABE9B3;
-}
-
-#cpu {
-  background: #96CDFB;
-}
-
-#memory {
-  background: #DDB6F2;
-}
-
-#disk {
-  background: #F5C2E7;
-}
-
-#temperature {
-  background: #F8BD96;
-}
-
-/* Modules center */
-#workspaces {
-  background: rgba(0, 0, 0, 0.5);
-}
+#workspaces {}
 
 #workspaces button {
-  color: #B5E8E0;
-  background: transparent;
-  padding: 4px 4px;
-  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 6px;
+  background: #aaaaaa;
+  transition: background 0.3s ease;
 }
 
-#workspaces button.occupied {
-  color: #A6E3A1;
+#workspaces button * {
+  background: black;
+  opacity: 1;
 }
 
-#workspaces button.active {
-  color: #89B4FA;
-  text-shadow: 0 0 4px #ABE9B3;
+#workspaces button.visible {
+  background: #dddddd;
 }
 
 #workspaces button:hover {
-  color: #89B4FA;
-}
-
-#workspaces button.active:hover {}
-
-/* Modules right */
-#taskbar {
-  background: transparent;
+  background: #dddddd;
 }
 
 #taskbar button {
-  padding: 0px 5px;
-  margin: 0px 3px;
+  background: #aaaaaa;
   border-radius: 6px;
   transition: background 0.3s ease;
 }
 
 #taskbar button.active {
-  background: rgba(34, 36, 54, 0.5);
+  background: #dddddd;
 }
 
 #taskbar button:hover {
-  background: rgba(34, 36, 54, 0.5);
+  background: #dddddd;
 }
 
-#idle_inhibitor {
-  background: #B5E8E0;
-  padding-right: 15px;
+#taskbar {
+  background: transparent;
 }
+
+#idle_inhibitor {}
 
 #pulseaudio {
   min-width: 55px;
-  color: #1A1826;
-  background: #F5E0DC;
 }
 
 #pulseaudio-slider {
-  color: #1A1826;
-  background: #E8A2AF;
-  min-width: 50px;
+    padding: 0;
+    margin: 0;
+}
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0.5;
+    background: white;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 80px;
+    border-radius: 5px;
+    background: black;
+}
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background: #CCCCCC;
 }
 
-#pulseaudio-slider slider {}
-
-
-#network {
-  background: #CBA6F7;
-  padding-right: 13px;
-}
-
-#language {
-  background: #A6E3A1;
-  padding-right: 15px;
-}
 
 /* === Optional animation === */
 @keyframes blink {
   to {
     background-color: #BF616A;
-    color: #B5E8E0;
   }
 }
