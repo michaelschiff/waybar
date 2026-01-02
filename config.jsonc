@@ -79,14 +79,16 @@
       "on-click": "rofi-bluetooth",
      },
      "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": [
-          "\uf244",
-          "\uf243",
-          "\uf242",
-          "\uf241",
-          "\uf240",
-        ],
+        "format-discharging": "{capacity}% {icon}",
+        "format-icons": {
+          "discharging": [
+		"\uf244",
+          	"\uf243",
+          	"\uf242",
+          	"\uf241",
+          	"\uf240",
+	  ],
+	},
      },
      "custom/separator": {
         "format": "|",
