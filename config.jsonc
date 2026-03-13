@@ -7,16 +7,19 @@
     "gtk-layer-shell": true,
     "modules-center": [
         "clock",
+        "privacy",
     ],
     "modules-right": [
-        "cpu",
         "pulseaudio",
-        "pulseaudio/slider",
         "bluetooth",
         "network",
         "battery"
     ],
     "modules-left": [
+        "memory",
+        "custom/separator",
+        "cpu",
+        "custom/separator",
         "hyprland/workspaces",
         "custom/separator",
         "wlr/taskbar",
@@ -37,6 +40,19 @@
         "all-outputs": true,
         "show-special": true
     },
+    "cpu": {
+        "format": "{icon}",
+        "format-icons": [
+          "<span color='#69ff94'>▁</span>", // green
+          "<span color='#2aa9ff'>▂</span>", // blue
+          "<span color='#f8f8f2'>▃</span>", // white
+          "<span color='#f8f8f2'>▄</span>", // white
+          "<span color='#ffffa5'>▅</span>", // yellow
+          "<span color='#ffffa5'>▆</span>", // yellow
+          "<span color='#ff9977'>▇</span>", // orange
+          "<span color='#dd532e'>█</span>"  // red
+     ]
+    },
     "clock": {
         "tooltip-format": "{calendar}",
         "calendar": {
@@ -45,25 +61,35 @@
     },
     "network": {
         "format": "\uf1eb",
-        "format-ethernet": "{ifname}",
+        "format-ethernet": "{ipaddr} on {ifname}",
         "format-disconnected": "...",
-        "tooltip-format": "{ifname} via {gwaddr}"
+        "tooltip-format": "{ipaddr} on {ifname} via {gwaddr}"
     },
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": " {volume}%",
-        "format-source": " {volume}%",
-        "format-source-muted": "",
+        "format": "{icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
         "format-icons": {
-            "headphone": "",
-            "default": ["", "", ""]
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "<span color='#f8f8f2'>▁</span>", // white 
+                "<span color='#f8f8f2'>▂</span>", // white 
+                "<span color='#f8f8f2'>▃</span>", // white
+                "<span color='#f8f8f2'>▄</span>", // white
+                "<span color='#f8f8f2'>▅</span>", // white 
+                "<span color='#f8f8f2'>▆</span>", // white 
+                "<span color='#f8f8f2'>▇</span>", // white 
+                "<span color='#dd532e'>█</span>"  // red
+            ]
         },
-        "on-click": "pavucontrol",
-    },
-    "pulseaudio/slider": {
-        "min": 0,
-        "max": 100,
-        "orientation": "horizontal"
+        "scroll-step": 0,
+        "on-click": "pavucontrol"
     },
     "bluetooth": {
       "format-on": "",
