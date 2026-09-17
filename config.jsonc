@@ -123,16 +123,16 @@
               "\udb80\udc85",
 	        ],
             "discharging": [
-                "<span color='#69ff94'>\udb80\udc7a</span>",
-                "<span color='#69ff94'>\udb80\udc7b</span>",
-                "<span color='#69ff94'>\udb80\udc7c</span>",
-                "<span color='#69ff94'>\udb80\udc7d</span>",
-                "<span color='#69ff94'>\udb80\udc7e</span>",
-                "<span color='orange'>\udb80\udc7f</span>",
-                "<span color='orange'>\udb80\udc80</span>",
-                "<span color='orange'>\udb80\udc81</span>",
-                "<span color='#dd532e'>\udb80\udc82</span>",
-                "<span color='#dd532e'>\udb80\udc79</span>"
+                "<span color='red'>\udb80\udc7a</span>",
+                "<span color='red'>\udb80\udc7b</span>",
+                "<span color='orange'>\udb80\udc7c</span>",
+                "<span color='orange'>\udb80\udc7d</span>",
+                "<span color='orange'>\udb80\udc7e</span>",
+                "<span color='white'>\udb80\udc7f</span>",
+                "<span color='white'>\udb80\udc80</span>",
+                "<span color='white'>\udb80\udc81</span>",
+                "<span color='white'>\udb80\udc82</span>",
+                "<span color='white'>\udb80\udc79</span>"
             ],
 	       "full": [
               "\udb80\udc85",
